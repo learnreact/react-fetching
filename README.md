@@ -1,9 +1,9 @@
-# react-fetcher
+# react-fetching
 A `fetch` component for designers.
 
 ## Example
 ```js
-<ReactFetcher
+<ReactFetching
   url="https://some-url.com"
   ok={json =>
     <div>

@@ -11,7 +11,7 @@ export default [
     dest: pkg.browser,
     format: "umd",
     external,
-    moduleName: "ReactFetcher",
+    moduleName: "ReactFetching",
     plugins: [
       resolve(),
       commonjs(),

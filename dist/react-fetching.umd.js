@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react'), require('react-json-fetch')) :
 	typeof define === 'function' && define.amd ? define(['react', 'react-json-fetch'], factory) :
-	(global.ReactFetcher = factory(global.React,global.ReactJSONFetch));
+	(global.ReactFetching = factory(global.React,global.ReactJSONFetch));
 }(this, (function (React,ReactJSONFetch) { 'use strict';
 
 React = React && 'default' in React ? React['default'] : React;

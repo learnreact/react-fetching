@@ -1,10 +1,10 @@
 {
-  "name": "react-fetcher",
+  "name": "react-fetching",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/react-fetcher.cjs.js",
-  "module": "dist/react-fetcher.esm.js",
-  "browser": "dist/react-fetcher.umd.js",
+  "main": "dist/react-fetching.cjs.js",
+  "module": "dist/react-fetching.esm.js",
+  "browser": "dist/react-fetching.umd.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -13,18 +13,15 @@
   },
   "author": "Michael Chan (@chantastic)",
   "license": "MIT",
-  "homepage": "https://github.com/learnreact/react-fetcher",
+  "homepage": "https://github.com/learnreact/react-fetching",
   "repository": {
     "type": "git",
-    "url": "https://github.com/learnreact/react-fetcher.git"
+    "url": "https://github.com/learnreact/react-fetching.git"
   },
   "bugs": {
-    "url": "https://github.com/learnreact/react-fetcher/issues"
+    "url": "https://github.com/learnreact/react-fetching/issues"
   },
-  "files": [
-    "dist",
-    "index.js"
-  ],
+  "files": ["dist", "index.js"],
   "dependencies": {
     "react": "^15.6.1",
     "react-json-fetch": "0.0.9"
