@@ -8,17 +8,19 @@ class ReactFetching extends React.Component {
   }
 
   render() {
-    const { url, ...props } = this.props
+    const { url, __status, ...props } = this.props
 
     return (
       <ReactJSONFetch
         {...props}
         url={
-          Object.entries(props.query).length
-            ? url +
-              "?" +
-              Object.entries(props.query).map(el => el.join("=")).join("&")
-            : url
+          this.props.__status
+            ? `http://httpstat.us/${this.props.__status}`
+            : Object.entries(props.query).length
+              ? url +
+                "?" +
+                Object.entries(props.query).map(el => el.join("=")).join("&")
+              : url
         }
       >
         {({ status, json }) => {
