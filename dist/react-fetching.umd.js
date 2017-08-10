@@ -97,19 +97,19 @@ var possibleConstructorReturn = function (self, call) {
   return call && (typeof call === "object" || typeof call === "function") ? call : self;
 };
 
-var Fetcher = function (_React$Component) {
-  inherits(Fetcher, _React$Component);
+var ReactFetching = function (_React$Component) {
+  inherits(ReactFetching, _React$Component);
 
-  function Fetcher(props) {
-    classCallCheck(this, Fetcher);
+  function ReactFetching(props) {
+    classCallCheck(this, ReactFetching);
 
-    var _this = possibleConstructorReturn(this, (Fetcher.__proto__ || Object.getPrototypeOf(Fetcher)).call(this, props));
+    var _this = possibleConstructorReturn(this, (ReactFetching.__proto__ || Object.getPrototypeOf(ReactFetching)).call(this, props));
 
     _this.shouldComponentUpdate = props.shouldComponentUpdate;
     return _this;
   }
 
-  createClass(Fetcher, [{
+  createClass(ReactFetching, [{
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -143,10 +143,10 @@ var Fetcher = function (_React$Component) {
       );
     }
   }]);
-  return Fetcher;
+  return ReactFetching;
 }(React.Component);
 
-Fetcher.defaultProps = {
+ReactFetching.defaultProps = {
   error: React.createElement(
     "div",
     null,
@@ -165,6 +165,6 @@ Fetcher.defaultProps = {
   query: {}
 };
 
-return Fetcher;
+return ReactFetching;
 
 })));
