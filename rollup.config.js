@@ -3,12 +3,14 @@ import commonjs from "rollup-plugin-commonjs"
 import babel from "rollup-plugin-babel"
 import pkg from "./package.json"
 
+const external = Object.keys(pkg.dependencies || {})
+
 export default [
   {
     entry: "index.js",
     dest: pkg.browser,
     format: "umd",
-    external: Object.keys(pkg.dependencies || {}),
+    external,
     moduleName: "ReactFetching",
     plugins: [
       resolve(),
@@ -20,7 +22,7 @@ export default [
   },
   {
     entry: "index.js",
-    external: ["react", "react-json-fetch"],
+    external,
     targets: [
       { dest: pkg.main, format: "cjs" },
       { dest: pkg.module, format: "es" },
