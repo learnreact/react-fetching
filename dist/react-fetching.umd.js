@@ -162,8 +162,7 @@ ReactFetching.defaultProps = {
     null,
     "loading..."
   ),
-  ok: function ok(_ref2) {
-    var json = _ref2.json;
+  ok: function ok(json) {
     return React.createElement(
       "code",
       null,
