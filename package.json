@@ -1,7 +1,7 @@
 {
   "name": "react-fetching",
-  "version": "0.0.7",
-  "description": "A Fetch component for designers",
+  "version": "0.0.8",
+  "description": "",
   "main": "dist/react-fetching.cjs.js",
   "module": "dist/react-fetching.esm.js",
   "browser": "dist/react-fetching.umd.js",
@@ -24,7 +24,7 @@
   "files": ["dist", "index.js"],
   "dependencies": {
     "react": "^15.6.1",
-    "react-json-fetch": "0.0.9"
+    "react-json-fetch": "0.0.11"
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
