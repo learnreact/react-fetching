@@ -109,17 +109,17 @@ var Fetcher = function (_React$Component) {
       var _this2 = this;
 
       var _props = this.props,
-          _url = _props._url,
-          props = objectWithoutProperties(_props, ["_url"]);
+          url = _props.url,
+          props = objectWithoutProperties(_props, ["url"]);
 
-
-      var url = Object.entries(props.query).length ? _url + "?" + Object.entries(props.query).map(function (el) {
-        return el.join("=");
-      }).join("&") : _url;
 
       return React.createElement(
         ReactJSONFetch,
-        _extends({}, props, { url: url }),
+        _extends({}, props, {
+          url: Object.entries(props.query).length ? url + "?" + Object.entries(props.query).map(function (el) {
+            return el.join("=");
+          }).join("&") : url
+        }),
         function (_ref) {
           var status = _ref.status,
               json = _ref.json;
