@@ -131,14 +131,14 @@ var Fetcher = function (_React$Component) {
               json = _ref.json;
 
           if (status && status.ok) {
-            return typeof _this2.props.ok === "function" ? React.Chidren.only(_this2.props.ok(json)) : React.Chidren.only(_this2.props.ok);
+            return typeof _this2.props.ok === "function" ? React.Children.only(_this2.props.ok(json)) : React.Children.only(_this2.props.ok);
           }
 
           if (status && !status.ok) {
-            return typeof _this2.props.error === "function" ? React.Chidren.only(_this2.props.error(status)) : React.Chidren.only(_this2.props.error);
+            return typeof _this2.props.error === "function" ? React.Children.only(_this2.props.error(status)) : React.Children.only(_this2.props.error);
           }
 
-          return React.Chidren.only(_this2.props.loading);
+          return React.Children.only(_this2.props.loading);
         }
       );
     }

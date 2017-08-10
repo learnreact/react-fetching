@@ -21,17 +21,17 @@ class Fetcher extends React.Component {
         {({ status, json }) => {
           if (status && status.ok) {
             return typeof this.props.ok === "function"
-              ? React.Chidren.only(this.props.ok(json))
-              : React.Chidren.only(this.props.ok)
+              ? React.Children.only(this.props.ok(json))
+              : React.Children.only(this.props.ok)
           }
 
           if (status && !status.ok) {
             return typeof this.props.error === "function"
-              ? React.Chidren.only(this.props.error(status))
-              : React.Chidren.only(this.props.error)
+              ? React.Children.only(this.props.error(status))
+              : React.Children.only(this.props.error)
           }
 
-          return React.Chidren.only(this.props.loading)
+          return React.Children.only(this.props.loading)
         }}
       </ReactJSONFetch>
     )
