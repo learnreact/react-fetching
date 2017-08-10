@@ -1,7 +1,7 @@
 import React from "react"
 import ReactJSONFetch from "react-json-fetch"
 
-class Fetcher extends React.Component {
+class ReactFetching extends React.Component {
   constructor(props) {
     super(props)
     this.shouldComponentUpdate = props.shouldComponentUpdate
@@ -40,11 +40,11 @@ class Fetcher extends React.Component {
     )
   }
 }
-Fetcher.defaultProps = {
+ReactFetching.defaultProps = {
   error: <div>error</div>,
   loading: <div>loading...</div>,
   ok: <div>ok</div>,
   query: {},
 }
 
-export default Fetcher
+export default ReactFetching
