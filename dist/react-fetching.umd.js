@@ -116,13 +116,14 @@ var ReactFetching = function (_React$Component) {
 
       var _props = this.props,
           url = _props.url,
-          props = objectWithoutProperties(_props, ["url"]);
+          __status = _props.__status,
+          props = objectWithoutProperties(_props, ["url", "__status"]);
 
 
       return React.createElement(
         ReactJSONFetch,
         _extends({}, props, {
-          url: Object.entries(props.query).length ? url + "?" + Object.entries(props.query).map(function (el) {
+          url: this.props.__status ? "http://httpstat.us/" + this.props.__status : Object.entries(props.query).length ? url + "?" + Object.entries(props.query).map(function (el) {
             return el.join("=");
           }).join("&") : url
         }),
@@ -147,21 +148,28 @@ var ReactFetching = function (_React$Component) {
 }(React.Component);
 
 ReactFetching.defaultProps = {
-  error: React.createElement(
-    "div",
-    null,
-    "error"
-  ),
+  error: function error(_error) {
+    return React.createElement(
+      "div",
+      null,
+      _error.status,
+      ": ",
+      _error.statusText
+    );
+  },
   loading: React.createElement(
     "div",
     null,
     "loading..."
   ),
-  ok: React.createElement(
-    "div",
-    null,
-    "ok"
-  ),
+  ok: function ok(_ref2) {
+    var json = _ref2.json;
+    return React.createElement(
+      "code",
+      null,
+      JSON.stringify(json, null, 2)
+    );
+  },
   query: {}
 };
 
