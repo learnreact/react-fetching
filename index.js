@@ -43,9 +43,15 @@ class ReactFetching extends React.Component {
   }
 }
 ReactFetching.defaultProps = {
-  error: <div>error</div>,
+  error: error =>
+    <div>
+      {error.status}: {error.statusText}
+    </div>,
   loading: <div>loading...</div>,
-  ok: <div>ok</div>,
+  ok: ({ json }) =>
+    <code>
+      {JSON.stringify(json, null, 2)}
+    </code>,
   query: {},
 }
 
