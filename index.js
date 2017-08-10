@@ -8,16 +8,19 @@ class Fetcher extends React.Component {
   }
 
   render() {
-    const { _url, ...props } = this.props
-
-    const url = Object.entries(props.query).length
-      ? _url +
-        "?" +
-        Object.entries(props.query).map(el => el.join("=")).join("&")
-      : _url
+    const { url, ...props } = this.props
 
     return (
-      <ReactJSONFetch {...props} url={url}>
+      <ReactJSONFetch
+        {...props}
+        url={
+          Object.entries(props.query).length
+            ? url +
+              "?" +
+              Object.entries(props.query).map(el => el.join("=")).join("&")
+            : url
+        }
+      >
         {({ status, json }) => {
           if (status && status.ok) {
             return typeof this.props.ok === "function"
