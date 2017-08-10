@@ -1,7 +1,7 @@
 {
   "name": "react-fetching",
   "version": "0.0.7",
-  "description": "",
+  "description": "A Fetch component for designers",
   "main": "dist/react-fetching.cjs.js",
   "module": "dist/react-fetching.esm.js",
   "browser": "dist/react-fetching.umd.js",
