@@ -158,9 +158,13 @@ ReactFetching.defaultProps = {
   ),
   ok: function ok(json) {
     return React.createElement(
-      "code",
+      "pre",
       null,
-      JSON.stringify(json, null, 2)
+      React.createElement(
+        "code",
+        null,
+        JSON.stringify(json, null, 2)
+      )
     );
   },
   query: {}

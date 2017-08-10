@@ -49,9 +49,11 @@ ReactFetching.defaultProps = {
     </div>,
   loading: <div>loading...</div>,
   ok: json =>
-    <code>
-      {JSON.stringify(json, null, 2)}
-    </code>,
+    <pre>
+      <code>
+        {JSON.stringify(json, null, 2)}
+      </code>
+    </pre>,
   query: {},
 }
 
