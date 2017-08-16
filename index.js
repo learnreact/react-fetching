@@ -8,7 +8,7 @@ class ReactFetching extends React.Component {
   }
 
   render() {
-    const { url, __status, ...props } = this.props
+    const { formatter = json => json, url, __status, ...props } = this.props
 
     return (
       <ReactJSONFetch
@@ -26,7 +26,7 @@ class ReactFetching extends React.Component {
         {({ status, json }) => {
           if (status && status.ok) {
             return typeof this.props.ok === "function"
-              ? React.Children.only(this.props.ok(json))
+              ? React.Children.only(this.props.ok(formatter(json)))
               : React.Children.only(this.props.ok)
           }
 
@@ -51,7 +51,7 @@ ReactFetching.defaultProps = {
   ok: json =>
     <pre>
       <code>
-        {JSON.stringify(json, null, 2)}
+        {JSON.stringify(formatter(json), null, 2)}
       </code>
     </pre>,
   query: {},
