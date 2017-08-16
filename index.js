@@ -8,7 +8,7 @@ class ReactFetching extends React.Component {
   }
 
   render() {
-    const { formatter = json => json, url, __status, ...props } = this.props
+    const { formatter, url, __status, ...props } = this.props
 
     return (
       <ReactJSONFetch
@@ -47,6 +47,7 @@ ReactFetching.defaultProps = {
     <div>
       {error.status}: {error.statusText}
     </div>,
+  formatter: json => json,
   loading: <div>loading...</div>,
   ok: json =>
     <pre>
