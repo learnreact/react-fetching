@@ -115,10 +115,7 @@ var ReactFetching = function (_React$Component) {
       var _this2 = this;
 
       var _props = this.props,
-          _props$formatter = _props.formatter,
-          formatter = _props$formatter === undefined ? function (json) {
-        return json;
-      } : _props$formatter,
+          formatter = _props.formatter,
           url = _props.url,
           __status = _props.__status,
           props = objectWithoutProperties(_props, ["formatter", "url", "__status"]);
@@ -160,6 +157,9 @@ ReactFetching.defaultProps = {
       ": ",
       _error.statusText
     );
+  },
+  formatter: function formatter(json) {
+    return json;
   },
   loading: React.createElement(
     "div",
