@@ -116,13 +116,14 @@ var ReactFetching = function (_React$Component) {
           formatter = _props.formatter,
           url = _props.url,
           __status = _props.__status,
-          props = objectWithoutProperties(_props, ["formatter", "url", "__status"]);
+          __statusURL = _props.__statusURL,
+          props = objectWithoutProperties(_props, ["formatter", "url", "__status", "__statusURL"]);
 
 
       return React.createElement(
         ReactJSONFetch,
         _extends({}, props, {
-          url: this.props.__status ? "http://httpstat.us/" + this.props.__status : Object.entries(props.query).length ? url + "?" + Object.entries(props.query).map(function (el) {
+          url: this.props.__status ? __statusURL + "/" + this.props.__status : Object.entries(props.query).length ? url + "?" + Object.entries(props.query).map(function (el) {
             return el.join("=");
           }).join("&") : url
         }),
@@ -175,7 +176,8 @@ ReactFetching.defaultProps = {
       )
     );
   },
-  query: {}
+  query: {},
+  __statusURL: "http://httpstat.us"
 };
 
 module.exports = ReactFetching;

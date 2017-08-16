@@ -8,14 +8,14 @@ class ReactFetching extends React.Component {
   }
 
   render() {
-    const { formatter, url, __status, ...props } = this.props
+    const { formatter, url, __status, __statusURL, ...props } = this.props
 
     return (
       <ReactJSONFetch
         {...props}
         url={
           this.props.__status
-            ? `http://httpstat.us/${this.props.__status}`
+            ? `${__statusURL}/${this.props.__status}`
             : Object.entries(props.query).length
               ? url +
                 "?" +
@@ -56,6 +56,7 @@ ReactFetching.defaultProps = {
       </code>
     </pre>,
   query: {},
+  __statusURL: "http://httpstat.us",
 }
 
 export default ReactFetching

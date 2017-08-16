@@ -1,6 +1,6 @@
 {
   "name": "react-fetching",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "main": "dist/react-fetching.cjs.js",
   "module": "dist/react-fetching.esm.js",
