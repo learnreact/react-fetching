@@ -113,9 +113,13 @@ var ReactFetching = function (_React$Component) {
       var _this2 = this;
 
       var _props = this.props,
+          _props$formatter = _props.formatter,
+          formatter = _props$formatter === undefined ? function (json) {
+        return json;
+      } : _props$formatter,
           url = _props.url,
           __status = _props.__status,
-          props = objectWithoutProperties(_props, ["url", "__status"]);
+          props = objectWithoutProperties(_props, ["formatter", "url", "__status"]);
 
 
       return React.createElement(
@@ -130,7 +134,7 @@ var ReactFetching = function (_React$Component) {
               json = _ref.json;
 
           if (status && status.ok) {
-            return typeof _this2.props.ok === "function" ? React.Children.only(_this2.props.ok(json)) : React.Children.only(_this2.props.ok);
+            return typeof _this2.props.ok === "function" ? React.Children.only(_this2.props.ok(formatter(json))) : React.Children.only(_this2.props.ok);
           }
 
           if (status && !status.ok) {
@@ -167,7 +171,7 @@ ReactFetching.defaultProps = {
       React.createElement(
         "code",
         null,
-        JSON.stringify(json, null, 2)
+        JSON.stringify(formatter(json), null, 2)
       )
     );
   },
