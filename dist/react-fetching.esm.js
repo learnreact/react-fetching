@@ -167,7 +167,7 @@ ReactFetching.defaultProps = {
       React.createElement(
         "code",
         null,
-        JSON.stringify(formatter(json), null, 2)
+        JSON.stringify(json, null, 2)
       )
     );
   },

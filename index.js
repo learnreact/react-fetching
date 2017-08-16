@@ -52,7 +52,7 @@ ReactFetching.defaultProps = {
   ok: json =>
     <pre>
       <code>
-        {JSON.stringify(formatter(json), null, 2)}
+        {JSON.stringify(json, null, 2)}
       </code>
     </pre>,
   query: {},
